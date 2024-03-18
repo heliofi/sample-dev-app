@@ -1,0 +1,83 @@
+<!-- This code won't run in yarn dev as it is html, you will have to start a live server. The url will look something like: http://127.0.0.1:5500/app/helio-checkout-widget/plain-javascript/index.html -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helio Checkout</title>
+    <style>
+      body {
+        padding: 40px; /* equivalent to p-10 in Tailwind */
+        background-color: #1a202c; /* bg-gray-900 */
+        color: white;
+        height: 100vh; /* h-full */
+      }
+      .space-y-4 > * + * {
+        margin-top: 1rem; /* space-y-4 equivalent */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="space-y-4">
+      <h1>This is how you embed the React widget</h1>
+      <code>yarn add @heliofi/checkout-react</code>
+      <h1>Simple example</h1>
+      <div id="helioCheckoutContainer1"></div>
+      <script
+        type="module"
+        crossorigin
+        src="https://embed.hel.io/assets/index-v1.js"
+      ></script>
+      <script>
+        addEventListener("DOMContentLoaded", () => {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer1"),
+            {
+              paylinkId: "65f1ed912d926efac71bbed1",
+              onSuccess: (payment) => {
+                console.log("Payment success", payment);
+              },
+            },
+          );
+        });
+      </script>
+      <h1>Pay with card</h1>
+      <div id="helioCheckoutContainer2"></div>
+      <script>
+        addEventListener("DOMContentLoaded", () => {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer2"),
+            {
+              paylinkId: "65f1ed912d926efac71bbed1",
+              primaryPaymentMethod: "fiat",
+              onSuccess: (payment) => {
+                console.log("Payment success", payment);
+              },
+            },
+          );
+        });
+      </script>
+      <h1>Dynamically change the price (variable)</h1>
+      <p>
+        NOTE: Your paylink needs to have dynamic pricing enabled for this to
+        work
+      </p>
+      <div id="helioCheckoutContainer3"></div>
+      <script>
+        addEventListener("DOMContentLoaded", () => {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer3"),
+            {
+              paylinkId: "65f43cd46eeaae9854101aa1",
+              amount: "1",
+              onSuccess: (payment) => {
+                console.log("Payment success", payment);
+              },
+            },
+          );
+        });
+      </script>
+    </div>
+  </body>
+</html>
