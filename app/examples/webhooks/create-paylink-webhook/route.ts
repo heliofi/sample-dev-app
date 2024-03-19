@@ -7,6 +7,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const paylinkId = "65eb1cd26b974e3af3a63f7d"; // Replace with your paylink id
     // To test this on localhost, you can use a service like ngrok to create a public URL
+    // To learn about ngrok, see https://ngrok.com/
     const targetUrl =
       "https://1f7e-92-236-176-6.ngrok-free.app/examples/webhooks/create-paylink-webhook/target";
     const events = ["CREATED"];

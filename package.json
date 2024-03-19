@@ -1,5 +1,5 @@
 {
-  "name": "sample-dev-app",
+  "name": "@heliofi/sample-dev-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {

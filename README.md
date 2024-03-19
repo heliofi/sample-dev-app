@@ -1,3 +1,10 @@
+# Helio Dev Example App
+
+This is a repository to help understand our embed button, API and Webhooks! This should be used along with [our docs](https://docs.hel.io).
+
+
+Everything below is to help you setup the project locally ⬇️
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
